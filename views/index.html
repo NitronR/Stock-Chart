@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Chart</title>
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="tip">Tooltip</div>
+    <center>
+      <h1>Stock chart</h1><hr>
+      <span class="date" id="from">From : </span>
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default">1M</button>
+        <button type="button" class="btn btn-default">3M</button>
+        <button type="button" class="btn btn-default">6M</button>
+        <button type="button" class="btn btn-default">1Y</button>
+      </div>
+      <span class="date" id="to">To : </span>
+      <div id="chart" style="position:relative">
+        <div id="nst" style="margin-top:20px;display:none;">Add stocks to display stock trends.</div>
+        <div id="rloader" style="position:absolute;top:50%;left:50%;margin-top:-25px;margin-left:-25px;z-index:2">
+          <div id="loader"></div>
+          <div id="aloader"></div>
+        </div>
+        <svg width="960" height="300" style="position:relative;height:55vh" id="svgchart"></svg>
+      </div>
+      
+      <div style="height:35px;">
+        &nbsp
+      </div>
+      
+      <div id="bottom_drawer">
+        <div id="drawer_toggle">
+          Add Stocks <span class="caret"></span>
+        </div>
+        <div id="drawer_content">
+          <input type="text" style="display:inline-block;width:50%;margin:5px;" class="form-control" id="stock_code"><button class="btn btn-primary" id="add_stock">Add stock</button>
+          <div id="error" style="display:none;color:red;font-size:12px;"></div>
+          <ul class="list-group" id="stocks">
+          </ul>
+        </div>
+      </div>
+    </center>
+    <script src="/client.js"></script>
+  </body>
+</html>
